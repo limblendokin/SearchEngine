@@ -3,15 +3,15 @@ package com.limblend.searchengine;
 import javax.swing.*;
 import java.awt.*;
 
-public class CustomGUI extends JFrame {
-    private FoundFilesTree model;
-    public CustomGUI(String name, FoundFilesTree model){
+public class SearchEngineGUI extends JFrame {
+    private FoundFilesTreeModel model;
+    public SearchEngineGUI(String name, FoundFilesTreeModel model){
         super(name);
         setResizable(false);
         this.model = model;
     }
-    public static void setupAndView(FoundFilesTree model){
-        CustomGUI window = new CustomGUI("Search Engine", model);
+    public static void setupAndView(FoundFilesTreeModel model){
+        SearchEngineGUI window = new SearchEngineGUI("Search Engine", model);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.addComponentsToPane(window.getContentPane());
         window.pack();
@@ -38,6 +38,9 @@ public class CustomGUI extends JFrame {
         JTextField queryTextField = new JTextField();
         JButton searchButton = new JButton("Search");
         searchButton.addActionListener(new SearchComponent(model, extensionTextField, queryTextField));
+
+        queryTextField.setText("private");
+        extensionTextField.setText("java");
 
         textFieldsInputPanel.add(extensionLabel);
         textFieldsInputPanel.add(extensionTextField);

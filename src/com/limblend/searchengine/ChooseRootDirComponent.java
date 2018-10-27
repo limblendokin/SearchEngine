@@ -1,16 +1,15 @@
 package com.limblend.searchengine;
 
 import javax.swing.*;
-import javax.swing.tree.DefaultMutableTreeNode;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 
 public class ChooseRootDirComponent implements ActionListener {
 
-    private FoundFilesTree model;
+    private FoundFilesTreeModel model;
 
-    public ChooseRootDirComponent(FoundFilesTree model){
+    public ChooseRootDirComponent(FoundFilesTreeModel model){
         this.model = model;
     }
     @Override
@@ -20,7 +19,8 @@ public class ChooseRootDirComponent implements ActionListener {
         fileChooser.setAcceptAllFileFilterUsed(false);
         File selectedFile;
         if (fileChooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
-            model.setRoot(new DefaultMutableTreeNode(fileChooser.getSelectedFile()));
+            model.setRoot(new FileMatchesNode(null, fileChooser.getSelectedFile()));
+
         } else {
             System.out.println("No Selection ");
         }
