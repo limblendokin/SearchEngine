@@ -26,22 +26,29 @@ public class SearchEngineGUI extends JFrame {
         GridLayout inputPanelLayout = new GridLayout(1,3,10,10);
         inputPanel.setLayout(inputPanelLayout);
 
+        JPanel outputPanel = new JPanel();
+        GridLayout outputLayout = new GridLayout(1,2,10,10);
+        outputPanel.setLayout(outputLayout);
+
         JPanel textFieldsInputPanel = new JPanel();
-        GridLayout textFieldsInputPanelLayout = new GridLayout(2,2,10,10);
+        GridLayout textFieldsInputPanelLayout = new GridLayout(2,3,10,10);
         textFieldsInputPanel.setLayout(textFieldsInputPanelLayout);
 
+        JLabel selectedDirLabel = new JLabel("No dir selected");
         JButton chooseDirButton = new JButton("Choose directory...");
+        chooseDirButton.addActionListener(new ChooseRootDirComponent(model, selectedDirLabel));
         // choose dir button listetner
         JLabel extensionLabel = new JLabel("Extension:");
         JTextField extensionTextField = new JTextField();
         JLabel queryLabel = new JLabel("Search Query:");
         JTextField queryTextField = new JTextField();
         JButton searchButton = new JButton("Search");
-        searchButton.addActionListener(new SearchComponent(model, extensionTextField, queryTextField));
 
         queryTextField.setText("private");
         extensionTextField.setText("java");
 
+        textFieldsInputPanel.add(chooseDirButton);
+        textFieldsInputPanel.add(selectedDirLabel);
         textFieldsInputPanel.add(extensionLabel);
         textFieldsInputPanel.add(extensionTextField);
         textFieldsInputPanel.add(queryLabel);
@@ -51,20 +58,16 @@ public class SearchEngineGUI extends JFrame {
         inputPanel.add(textFieldsInputPanel);
         inputPanel.add(searchButton);
 
-        JPanel outputPanel = new JPanel();
-        GridLayout outputLayout = new GridLayout(1,2,10,10);
-        outputPanel.setLayout(outputLayout);
-
         JTree directoryTree = new JTree();
         directoryTree.setModel(model);
 
-        chooseDirButton.addActionListener(new ChooseRootDirComponent(model,directoryTree));
+        searchButton.addActionListener(new SearchComponent(model, extensionTextField, queryTextField, directoryTree));
+
         JScrollPane directoryTreeScrollPane = new JScrollPane(directoryTree);
         directoryTreeScrollPane.setPreferredSize(new Dimension(400,400));
 
-        JTextArea fileTextArea = new JTextArea();
         JTabbedPane fileTabbedPane = new JTabbedPane();
-        fileTabbedPane.add(fileTextArea);
+        directoryTree.addTreeSelectionListener(new FileSelectionComponent(directoryTree, fileTabbedPane));
 
         outputPanel.add(directoryTreeScrollPane);
         outputPanel.add(fileTabbedPane);

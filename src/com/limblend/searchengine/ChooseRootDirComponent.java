@@ -9,10 +9,11 @@ import java.io.File;
 public class ChooseRootDirComponent implements ActionListener {
 
     private FoundFilesTreeModel model;
-    private JTree tree;
+    private JLabel chosenDir;
 
-    public ChooseRootDirComponent(FoundFilesTreeModel model){
+    public ChooseRootDirComponent(FoundFilesTreeModel model, JLabel chosenDir){
         this.model = model;
+        this.chosenDir = chosenDir;
     }
 
     @Override
@@ -22,6 +23,7 @@ public class ChooseRootDirComponent implements ActionListener {
         fileChooser.setAcceptAllFileFilterUsed(false);
         File selectedFile;
         if (fileChooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
+            chosenDir.setText(fileChooser.getSelectedFile().getName());
             model.setRoot(new FileMatchesNode(null, fileChooser.getSelectedFile()));
         }
     }
