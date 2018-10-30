@@ -31,7 +31,7 @@ public class SearchEngineGUI extends JFrame {
         textFieldsInputPanel.setLayout(textFieldsInputPanelLayout);
 
         JButton chooseDirButton = new JButton("Choose directory...");
-        chooseDirButton.addActionListener(new ChooseRootDirComponent(model));
+        // choose dir button listetner
         JLabel extensionLabel = new JLabel("Extension:");
         JTextField extensionTextField = new JTextField();
         JLabel queryLabel = new JLabel("Search Query:");
@@ -57,6 +57,8 @@ public class SearchEngineGUI extends JFrame {
 
         JTree directoryTree = new JTree();
         directoryTree.setModel(model);
+
+        chooseDirButton.addActionListener(new ChooseRootDirComponent(model,directoryTree));
         JScrollPane directoryTreeScrollPane = new JScrollPane(directoryTree);
         directoryTreeScrollPane.setPreferredSize(new Dimension(400,400));
 

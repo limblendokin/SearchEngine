@@ -48,7 +48,5 @@ public class SearchComponent implements ActionListener {
                 model.insertNode(f, matches);
             }
         }
-
-        System.out.println("");
     }
 }

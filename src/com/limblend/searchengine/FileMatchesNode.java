@@ -1,13 +1,12 @@
 package com.limblend.searchengine;
 
+import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.TreeNode;
 import java.io.File;
 import java.util.*;
 
-public class FileMatchesNode implements TreeNode {
+public class FileMatchesNode extends DefaultMutableTreeNode {
     private FileMatchesNode parent;
-    private Vector<FileMatchesNode> children;
-    private int level;
     private boolean isLeaf;
 
     public File getFile() {
@@ -22,9 +21,10 @@ public class FileMatchesNode implements TreeNode {
     private LinkedList<Integer> matches;
 
     public FileMatchesNode(FileMatchesNode parent, File file){
-        this.parent = parent;
-        level = parent.getLevel() + 1;
-        parent.setChild(this);
+        if(parent != null) {
+            this.parent = parent;
+            parent.setChild(this);
+        }
         this.file = file;
         this.isLeaf = false;
         children = new Vector<>();
@@ -74,44 +74,7 @@ public class FileMatchesNode implements TreeNode {
         this.children.add(child);
     }
 
-    public int getLevel(){
-        return level;
-    }
 
-    @Override
-    public TreeNode getChildAt(int i) {
-        return children.elementAt(i);
-    }
-
-    @Override
-    public int getChildCount() {
-        return children.size();
-    }
-
-    @Override
-    public TreeNode getParent() {
-        return parent;
-    }
-
-    @Override
-    public int getIndex(TreeNode treeNode) {
-        return children.indexOf(treeNode);
-    }
-
-    @Override
-    public boolean getAllowsChildren() {
-        return !isLeaf;
-    }
-
-    @Override
-    public boolean isLeaf() {
-        return isLeaf;
-    }
-
-    @Override
-    public Enumeration children() {
-        return null;
-    }
 
     public String toString(){
         return file.getName();

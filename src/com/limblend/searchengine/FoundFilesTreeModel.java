@@ -7,67 +7,39 @@ import javax.swing.tree.*;
 import java.awt.*;
 import java.io.File;
 import java.nio.file.Path;
-import java.util.EventListener;
-import java.util.LinkedList;
-import java.util.Vector;
+import java.util.*;
 
-public class FoundFilesTreeModel implements TreeModel {
-    private FileMatchesNode root;
-    private EventListenerList listenerList;
+public class FoundFilesTreeModel extends DefaultTreeModel {
     public FoundFilesTreeModel(FileMatchesNode root){
-        listenerList = new EventListenerList();
-        this.root = root;
+        super(root);
     }
     public void insertNode(File file, LinkedList<Integer> matches){
-        int level = root.getLevel();
-        FileMatchesNode tmp = root;
+        FileMatchesNode parent = (FileMatchesNode)root;
+        int level = parent.getFile().toPath().getNameCount();
         Path path = file.toPath();
+        FileMatchesNode child;
+        boolean exists = false;
+        int j = 0;
         for(int i = level + 1; i < path.getNameCount(); i++){
-            tmp = tmp.insertChild(file.toPath().subpath(0,i).toFile());
+            exists = false;
+            for(j = 0; j < parent.getChildCount();j++){
+                child = (FileMatchesNode) parent.getChildAt(j);
+                Path childSubpath = child.getFile().toPath().getRoot().resolve(child.getFile().toPath().subpath(0,i));
+                Path fileSubpath = file.toPath().getRoot().resolve(file.toPath().subpath(0,i));
+                if(childSubpath.equals(fileSubpath)){
+                    exists = true;
+                    break;
+                }
+            }
+            if(exists){
+                parent = (FileMatchesNode) parent.getChildAt(j);
+            }
+            else{
+                parent.insert(new FileMatchesNode(parent, file.toPath().getRoot().resolve(file.toPath().subpath(0,i)).toFile()), 0);
+                parent = (FileMatchesNode) parent.getChildAt(0);
+            }
         }
-        tmp.insertChild(file, matches);
-    }
-    @Override
-    public Object getRoot() {
-        return root;
-    }
-    public void setRoot(FileMatchesNode root){
-        this.root = root;
-    }
-
-    @Override
-    public Object getChild(Object o, int i) {
-        return ((FileMatchesNode)o).getChildAt(i);
-    }
-
-    @Override
-    public int getChildCount(Object o) {
-        return ((FileMatchesNode)o).getChildCount();
-    }
-
-    @Override
-    public boolean isLeaf(Object o) {
-        return ((FileMatchesNode)o).isLeaf();
-    }
-
-    @Override
-    public void valueForPathChanged(TreePath treePath, Object o) {
-
-    }
-
-    @Override
-    public int getIndexOfChild(Object o, Object o1) {
-        return ((FileMatchesNode)o).getIndex((FileMatchesNode)o1);
-    }
-
-    @Override
-    public void addTreeModelListener(TreeModelListener treeModelListener) {
-        listenerList.add(TreeModelListener.class, treeModelListener);
-    }
-
-    @Override
-    public void removeTreeModelListener(TreeModelListener treeModelListener) {
-        listenerList.remove(TreeModelListener.class, treeModelListener);
+        parent.insert(new FileMatchesNode(parent, file, matches), 0);
     }
 
 }
