@@ -2,8 +2,8 @@ package com.limblend.searchengine;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.LinkedList;
+import java.util.ArrayList;
 
 public interface FilePatternFinder {
-    LinkedList<Integer> search(File file, String pattern) throws IOException;
+    ArrayList<Integer> search(File file, String pattern);
 }

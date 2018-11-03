@@ -1,6 +1,7 @@
 package com.limblend.searchengine;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -8,57 +9,50 @@ import java.io.IOException;
 import java.util.*;
 
 public class SearchComponent implements ActionListener {
-    private FoundFilesTreeModel model;
+    private JTextField chosenDirectory;
     private JTextField extension;
     private JTextField stringToSearch;
-    private JTree tree;
+    private SearchThread searchThread;
 
-    public SearchComponent(FoundFilesTreeModel model, JTextField extension, JTextField stringToSearch, JTree tree){
-        this.model = model;
+    public SearchComponent(JTextField chosenDirectory, JTextField extension, JTextField stringToSearch){
+        this.chosenDirectory = chosenDirectory;
         this.extension = extension;
         this.stringToSearch = stringToSearch;
-        this.tree = tree;
     }
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
-
-        DirectoryListGenerator generator = new DirectoryListGenerator();
-        FileMatchesNode node = (FileMatchesNode)model.getRoot();
-        ((FileMatchesNode) model.getRoot()).removeAllChildren();
-        HashSet<File> directoriesList = generator.getDirectoriesList(node.getFile());
-        FileExtensionFilter filter = new FileExtensionFilter();
-        //TODO: splitable extension
-        LinkedList<File> filteredFiles = new LinkedList<>();
-        Iterator<File> it = directoriesList.iterator();
-        while(it.hasNext()){
-            filteredFiles.addAll(filter.filter(it.next().listFiles(File::isFile), extension.getText()));
+        FoundFilesTreeModel model = null;
+        if(searchThread == null){
+            File file = new File(chosenDirectory.getText());
+            if(file.exists() && file.isDirectory()) {
+                if(!stringToSearch.getText().equals("")) {
+                    String extensionValue = extension.getText();
+                    if(extensionValue.equals("")) {
+                        extensionValue = "log";
+                    }
+                    model = new FoundFilesTreeModel(new FileMatchesNode(null, file));
+                    SearchEngineOutputGUI.setupAndView(model, stringToSearch.getText(), extensionValue);
+                    searchThread = new SearchThread(model, stringToSearch.getText(), extensionValue);
+                }
+                else {
+                    JOptionPane.showMessageDialog(new Frame(), "String to search should not be empty!", "Input Error", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
+            }
+            else{
+                JOptionPane.showMessageDialog(new Frame(), "Selected directory does not exists!", "Input Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
         }
-        LinkedList<FileMatchesNode> nodes = new LinkedList<>();
-        LinkedList<Integer> matches = new LinkedList<>();
-        FilePatternFinder finder = new BoyerMoorePatternFinder();
-        it = filteredFiles.iterator();
-        File f;
-        int i = 0;
-        while(it.hasNext()){
-            f = it.next();
+        if(searchThread.isAlive()){
+            searchThread.interrupt();
             try {
-                matches = finder.search(f, stringToSearch.getText());
-            } catch (IOException e) {
+                searchThread.join();
+            } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            if(!matches.isEmpty()){
-                model.insertNode(f, matches);
-            }
         }
-        expandRows(tree, 0, tree.getRowCount());
-        System.out.print("");
-    }
-    private void expandRows(JTree tree, int startIndex, int rowCount){
-        for(int i = startIndex; i<rowCount; i++){
-            tree.expandRow(i);
-        }
-        if(rowCount !=tree.getRowCount()){
-            expandRows(tree, rowCount, tree.getRowCount());
-        }
+        searchThread = new SearchThread(model, stringToSearch.getText(), extension.getText());
+        searchThread.start();
     }
 }

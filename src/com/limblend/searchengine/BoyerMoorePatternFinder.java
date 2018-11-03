@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 
@@ -12,68 +13,79 @@ public class BoyerMoorePatternFinder implements FilePatternFinder {
 
     public BoyerMoorePatternFinder() {}
 
-    public LinkedList<Integer> search(File file, String pattern) throws IOException {
-
-        BufferedReader br = Files.newBufferedReader(file.toPath());
-
-        LinkedList<Integer> matches = new LinkedList<>();
-        if(pattern.length() == 0){
-            return matches;
-        }
-        int[] badCharactersTable = createBadCharactersJumpTable(pattern);
-        int[] suffixesTable = createSuffixesJumpTable(pattern);
-
-        StringBuffer text = new StringBuffer(pattern.length());
-        int c;
-        for(int i = 0; i<pattern.length() && (c=br.read())!=-1; i++){
-            text.append((char)c);
-        }
-        int i;
-        int max;
-        while (text.length()>=pattern.length()){
-
-            for(i=pattern.length()-1; i<text.length() && pattern.charAt(i)==text.charAt(i); i--){
-                if(i==0){
-                    matches.add(i);
-                    break;
+    public ArrayList<Integer> search(File file, String pattern){
+        try {
+            BufferedReader br = Files.newBufferedReader(file.toPath());
+            int curIndex = -1;
+            ArrayList<Integer> matches = new ArrayList<>();
+            if (pattern.length() == 0) {
+                return matches;
+            }
+            int[] badCharactersTable = createBadCharactersJumpTable(pattern);
+            int[] suffixesTable = createSuffixesJumpTable(pattern);
+            StringBuffer buffer = new StringBuffer();
+            int c = -1;
+            while (buffer.length() < pattern.length() && (c = br.read()) != -1) {
+                buffer.append((char) c);
+                curIndex++;
+            }
+            boolean endOfFileReached = c==-1;
+            int i;
+            int readCount;
+            int max;
+            while (!endOfFileReached) {
+                i = pattern.length() - 1;
+                while (i >= 0 && buffer.charAt(i) == pattern.charAt(i)) {
+                    i--;
                 }
+                if (i < 0) {
+                    i++;
+                    matches.add(curIndex - pattern.length() + 1);
+                }
+                max = Math.max(suffixesTable[i], badCharactersTable[buffer.charAt(i)]);
+                readCount = i + max - buffer.length() + 1;
+                buffer.delete(0, readCount);
+                while (buffer.length() < pattern.length() && (c = br.read()) != -1) {
+                    buffer.append((char) c);
+                    curIndex++;
+                }
+                if (c == -1)
+                    endOfFileReached = true;
             }
-            max = Math.max(suffixesTable[pattern.length()-1-i], badCharactersTable[pattern.charAt(i)]);
-            text.delete(0, max);
-            i = 0;
-            while(i<max && (c=br.read())!=-1){
-                text.append((char)c);
-                i++;
-            }
+            br.close();
+            return matches;
+        } catch(IOException e){
+            e.printStackTrace();
         }
-        return matches;
+        return null;
     }
     private int[] createBadCharactersJumpTable(String pattern){
         int[] badCharacters = new int[Character.MAX_VALUE];
         Arrays.fill(badCharacters, pattern.length());
-        for(int i = 0; i < pattern.length(); i++){
+        for(int i = 0; i < pattern.length()-1; i++){
             badCharacters[ pattern.charAt(i) ] = pattern.length() - 1 - i;
         }
         return badCharacters;
     }
     private int[] createSuffixesJumpTable(String pattern){
         int[] suffixes = new int[pattern.length()];
-        int lastPrefix = pattern.length();
-        for(int i = pattern.length(); i > 0; i--){
-            if(isPrefix(pattern, i)){
-                lastPrefix = i;
+        int lastPrefix = pattern.length()-1;
+        for(int i = pattern.length() - 1; i >= 0; i--){
+            if(isPrefix(pattern, i+1)){
+                lastPrefix = i+1;
             }
-            suffixes[pattern.length() - i] = lastPrefix - i + pattern.length();
+            suffixes[i] = lastPrefix - i + pattern.length() - 1;
         }
         for(int i = 0; i < pattern.length()-1; i++){
             int slen = suffixLength(pattern, i);
-            suffixes[slen] = pattern.length() - 1 - i + slen;
+            if(pattern.charAt(i-slen)!=pattern.charAt(pattern.length() - 1 - slen))
+                suffixes[pattern.length()-1-slen] = pattern.length() - 1 - i + slen;
         }
         return suffixes;
     }
     private int suffixLength(String pattern, int pos){
         int len = 0;
-        for(int i = pos, j = pattern.length() - 1; i >= 0 && pattern.charAt(i) == pattern.charAt(j); --i, --j){
+        while(pattern.charAt(pos-len) == pattern.charAt(pattern.length()-1-len) && len<pos){
             len++;
         }
         return len;

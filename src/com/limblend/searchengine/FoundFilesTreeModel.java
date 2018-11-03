@@ -1,10 +1,6 @@
 package com.limblend.searchengine;
 
-import javax.swing.event.EventListenerList;
-import javax.swing.event.TreeModelEvent;
-import javax.swing.event.TreeModelListener;
 import javax.swing.tree.*;
-import java.awt.*;
 import java.io.File;
 import java.nio.file.Path;
 import java.util.*;
@@ -13,12 +9,12 @@ public class FoundFilesTreeModel extends DefaultTreeModel {
     public FoundFilesTreeModel(FileMatchesNode root){
         super(root);
     }
-    public void insertNode(File file, LinkedList<Integer> matches){
+    public void insertNode(File file, ArrayList<Integer> matches){
         FileMatchesNode parent = (FileMatchesNode)root;
         int level = parent.getFile().toPath().getNameCount();
         Path path = file.toPath();
         FileMatchesNode child;
-        boolean exists = false;
+        boolean exists;
         int j = 0;
         for(int i = level + 1; i < path.getNameCount(); i++){
             exists = false;

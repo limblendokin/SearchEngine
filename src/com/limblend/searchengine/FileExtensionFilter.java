@@ -8,9 +8,11 @@ import java.util.ListIterator;
 public class FileExtensionFilter {
     public LinkedList<File> filter(File[] files, String extension){
         LinkedList<File> filteredFiles = new LinkedList<>();
-        for(File f : files){
-            if(getFileExtension(f.getName()).equals(extension)){
-                filteredFiles.add(f);
+        if(files!=null) {
+            for (File f : files) {
+                if (getFileExtension(f.getName()).equals(extension)) {
+                    filteredFiles.add(f);
+                }
             }
         }
         return filteredFiles;

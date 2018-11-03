@@ -3,10 +3,11 @@ package com.limblend.searchengine;
 import java.io.File;
 import java.util.*;
 
-public class DirectoryListGenerator {
+public class DirectoryListGenerator implements DirectoryListGeneratorInterface {
     public DirectoryListGenerator(){
 
     }
+    @Override
     public HashSet<File> getDirectoriesList(File rootDirectory){
         HashSet<File> dirHashSet = new HashSet<>();
         dirHashSet.add(rootDirectory);

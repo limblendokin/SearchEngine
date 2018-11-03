@@ -8,13 +8,13 @@ import java.util.*;
 public class FileMatchesNode extends DefaultMutableTreeNode {
 
     private File file;
-    private LinkedList<Integer> matches;
+    private ArrayList<Integer> matches;
 
     public File getFile() {
         return file;
     }
 
-    public LinkedList<Integer> getMatches() {
+    public ArrayList<Integer> getMatches() {
         return matches;
     }
 
@@ -23,7 +23,7 @@ public class FileMatchesNode extends DefaultMutableTreeNode {
         this.file = file;
     }
 
-    public FileMatchesNode(FileMatchesNode parent, File file, LinkedList<Integer> matches){
+    public FileMatchesNode(FileMatchesNode parent, File file, ArrayList<Integer> matches){
         super(parent, false);
         this.file = file;
         this.matches = matches;

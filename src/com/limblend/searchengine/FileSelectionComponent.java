@@ -24,6 +24,19 @@ public class FileSelectionComponent implements TreeSelectionListener {
             return;
         if(!node.isLeaf())
             return;
-        tabbedPane.addTab(node.getFile().getName(), new TextFileViewPanel(node.getFile(), node.getMatches()));
+        boolean alreadyContains = false;
+        int index = tabbedPane.getTabCount()-1;
+        for(int i = 0; i<tabbedPane.getTabCount(); i++){
+            if(tabbedPane.getTitleAt(i).equals(node.getFile().getName())){
+                alreadyContains = true;
+                index = i;
+                break;
+            }
+        }
+        if(!alreadyContains) {
+            tabbedPane.addTab(node.getFile().getName(), new TextFileViewPanel(node.getFile(), node.getMatches()));
+            index++;
+        }
+        tabbedPane.setSelectedIndex(index);
     }
 }

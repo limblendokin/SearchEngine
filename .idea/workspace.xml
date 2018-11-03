@@ -2,14 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7aa11b66-89cc-453b-a33a-e2298eb40d08" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/limblend/searchengine/FileSelectionComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/limblend/searchengine/TextFileViewPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/limblend/searchengine/DirectoryListGeneratorInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/limblend/searchengine/RecursiveDirectoryListGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/limblend/searchengine/SearchEngineInputGUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/limblend/searchengine/SearchEngineOutputGUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/limblend/searchengine/SearchThread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/limblend/searchengine/BoyerMoorePatternFinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/limblend/searchengine/BoyerMoorePatternFinder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/limblend/searchengine/ChooseRootDirComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/limblend/searchengine/ChooseRootDirComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/limblend/searchengine/DirectoryListGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/limblend/searchengine/DirectoryListGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/limblend/searchengine/FileExtensionFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/limblend/searchengine/FileExtensionFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/limblend/searchengine/FileMatchesNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/limblend/searchengine/FileMatchesNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/limblend/searchengine/FilePatternFinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/limblend/searchengine/FilePatternFinder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/limblend/searchengine/FileSelectionComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/limblend/searchengine/FileSelectionComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/limblend/searchengine/FoundFilesTreeModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/limblend/searchengine/FoundFilesTreeModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/limblend/searchengine/SearchComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/limblend/searchengine/SearchComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/limblend/searchengine/SearchEngineGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/limblend/searchengine/SearchEngineGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/limblend/searchengine/SearchEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/limblend/searchengine/SearchEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/limblend/searchengine/SearchEngineGUI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/limblend/searchengine/TextFileViewPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/limblend/searchengine/TextFileViewPanel.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,29 +50,29 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="class" value="5" />
+          <entry key="class" value="9" />
           <entry key="form" value="5" />
-          <entry key="java" value="26" />
+          <entry key="java" value="56" />
           <entry key="java___jb_tmp___" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="5" />
+          <entry key="CLASS" value="9" />
           <entry key="GUI_DESIGNER_FORM" value="5" />
-          <entry key="JAVA" value="26" />
+          <entry key="JAVA" value="56" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="8926" />
+          <entry key="java" value="15355" />
           <entry key="txt" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="8926" />
+          <entry key="JAVA" value="15355" />
           <entry key="PLAIN_TEXT" value="16" />
         </counts>
       </usages-collector>
@@ -109,10 +119,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/limblend/searchengine/SearchEngine.java">
+        <entry file="file://$PROJECT_DIR$/src/com/limblend/searchengine/SearchEngineInputGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="43" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
+            <state relative-caret-position="131">
+              <caret line="34" column="121" selection-start-line="34" selection-start-column="121" selection-end-line="34" selection-end-column="121" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -121,10 +131,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/limblend/searchengine/SearchEngineGUI.java">
+        <entry file="file://$PROJECT_DIR$/src/com/limblend/searchengine/SearchEngineOutputGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
+            <state relative-caret-position="323">
+              <caret line="28" column="63" selection-start-line="28" selection-start-column="63" selection-end-line="28" selection-end-column="63" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -135,33 +145,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/limblend/searchengine/BoyerMoorePatternFinder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
-              <caret line="18" column="57" lean-forward="true" selection-start-line="18" selection-start-column="57" selection-end-line="18" selection-end-column="57" />
+            <state relative-caret-position="867">
+              <caret line="51" column="28" lean-forward="true" selection-start-line="51" selection-start-column="28" selection-end-line="51" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/limblend/searchengine/FileExtensionFilter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/limblend/searchengine/FoundFilesTreeModel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="37" selection-start-line="37" selection-end-line="37" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#426#427#0" expanded="true" />
-                <element signature="e#453#454#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -170,8 +157,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/limblend/searchengine/SearchComponent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="54" column="5" lean-forward="true" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
+            <state relative-caret-position="29">
+              <caret line="23" selection-start-line="23" selection-end-line="23" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -180,22 +167,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/limblend/searchengine/TextFileViewPanel.java">
+        <entry file="file://$PROJECT_DIR$/src/com/limblend/searchengine/FileSelectionComponent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="8" column="24" lean-forward="true" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/limblend/searchengine/ChooseRootDirComponent.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="19" column="58" selection-start-line="19" selection-start-column="58" selection-end-line="19" selection-end-column="58" />
+            <state relative-caret-position="244">
+              <caret line="21" selection-start-line="21" selection-end-line="21" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -206,29 +181,50 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/limblend/searchengine/FileMatchesNode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="417">
-              <caret line="32" column="25" lean-forward="true" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
+            <state relative-caret-position="-28">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#323#324#0" expanded="true" />
-                <element signature="e#350#351#0" expanded="true" />
-                <element signature="e#397#398#0" expanded="true" />
-                <element signature="e#427#428#0" expanded="true" />
-                <element signature="e#2858#2859#0" expanded="true" />
-                <element signature="e#2895#2896#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/limblend/searchengine/FileSelectionComponent.java">
+        <entry file="file://$PROJECT_DIR$/src/com/limblend/searchengine/SearchThread.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
-              <caret line="27" column="5" lean-forward="true" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+            <state relative-caret-position="420">
+              <caret line="52" selection-start-line="52" selection-end-line="52" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/limblend/searchengine/ChooseRootDirComponent.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-79">
+              <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/limblend/searchengine/FileExtensionFilter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="27" column="9" lean-forward="true" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/limblend/searchengine/DirectoryListGenerator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-28">
+              <caret line="10" column="40" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -238,8 +234,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Singleton" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -247,6 +243,8 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>insertelementat</find>
+      <find>java</find>
+      <find>inser</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -274,24 +272,29 @@
         <option value="$PROJECT_DIR$/src/com/limblend/searchengine/FileListGeneratorTest.groovy" />
         <option value="$PROJECT_DIR$/Test/com/limblend/searchengine/FileListGeneratorTest.groovy" />
         <option value="$PROJECT_DIR$/test/com/limblend/searchengine/FileListGeneratorTest.groovy" />
-        <option value="$PROJECT_DIR$/src/com/limblend/searchengine/FileExtensionFilter.java" />
         <option value="$PROJECT_DIR$/src/com/limblend/searchengine/FileListGenerator.java" />
-        <option value="$PROJECT_DIR$/src/com/limblend/searchengine/FilePatternFinder.java" />
-        <option value="$PROJECT_DIR$/src/com/limblend/searchengine/DirectoryListGenerator.java" />
         <option value="$PROJECT_DIR$/src/com/limblend/searchengine/FoundFilesTree.java" />
         <option value="$PROJECT_DIR$/src/com/limblend/searchengine/CustomGUI.java" />
         <option value="$PROJECT_DIR$/src/com/limblend/searchengine/FoundFilesTreeModelListeners.java" />
         <option value="$PROJECT_DIR$/src/com/limblend/searchengine/FoundFilesTreeModelListener.java" />
-        <option value="$PROJECT_DIR$/src/com/limblend/searchengine/SearchEngine.java" />
-        <option value="$PROJECT_DIR$/src/com/limblend/searchengine/FoundFilesTreeModel.java" />
-        <option value="$PROJECT_DIR$/src/com/limblend/searchengine/FileMatchesNode.java" />
-        <option value="$PROJECT_DIR$/src/com/limblend/searchengine/ChooseRootDirComponent.java" />
         <option value="$PROJECT_DIR$/src/com/limblend/searchengine/OutputPanel.java" />
-        <option value="$PROJECT_DIR$/src/com/limblend/searchengine/SearchEngineGUI.java" />
+        <option value="$PROJECT_DIR$/src/com/limblend/searchengine/BM.java" />
+        <option value="$PROJECT_DIR$/src/com/limblend/searchengine/FileMatchesNode.java" />
+        <option value="$PROJECT_DIR$/src/com/limblend/searchengine/FilePatternFinder.java" />
+        <option value="$PROJECT_DIR$/src/com/limblend/searchengine/SearchEngine.java" />
+        <option value="$PROJECT_DIR$/src/com/limblend/searchengine/DirectoryListGenerator.java" />
+        <option value="$PROJECT_DIR$/src/com/limblend/searchengine/RecursiveDirectoryListGenerator.java" />
+        <option value="$PROJECT_DIR$/src/com/limblend/searchengine/FileExtensionFilter.java" />
         <option value="$PROJECT_DIR$/src/com/limblend/searchengine/BoyerMoorePatternFinder.java" />
-        <option value="$PROJECT_DIR$/src/com/limblend/searchengine/SearchComponent.java" />
-        <option value="$PROJECT_DIR$/src/com/limblend/searchengine/TextFileViewPanel.java" />
         <option value="$PROJECT_DIR$/src/com/limblend/searchengine/FileSelectionComponent.java" />
+        <option value="$PROJECT_DIR$/src/com/limblend/searchengine/SearchEngineGUI.java" />
+        <option value="$PROJECT_DIR$/src/com/limblend/searchengine/SearchThread.java" />
+        <option value="$PROJECT_DIR$/src/com/limblend/searchengine/TextFileViewPanel.java" />
+        <option value="$PROJECT_DIR$/src/com/limblend/searchengine/FoundFilesTreeModel.java" />
+        <option value="$PROJECT_DIR$/src/com/limblend/searchengine/ChooseRootDirComponent.java" />
+        <option value="$PROJECT_DIR$/src/com/limblend/searchengine/SearchEngineInputGUI.java" />
+        <option value="$PROJECT_DIR$/src/com/limblend/searchengine/SearchComponent.java" />
+        <option value="$PROJECT_DIR$/src/com/limblend/searchengine/SearchEngineOutputGUI.java" />
       </list>
     </option>
   </component>
@@ -337,7 +340,7 @@
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="269" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540910920796" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541230400317" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="Groovy JUnit" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Groovy JUnit" value="groovy.util.GroovyTestCase" />
     <property name="create.test.in.the.same.root" value="true" />
@@ -350,6 +353,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.limblend.searchengine" />
+    </key>
+    <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="com.limblend.searchengine" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -375,6 +381,19 @@
     </option>
   </component>
   <component name="RunManager" selected="Application.SearchEngine">
+    <configuration name="BM" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.limblend.searchengine.BM" />
+      <module name="SearchEngine" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.limblend.searchengine.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="JTreeExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.limblend.searchengine.JTreeExample" />
       <module name="SearchEngine" />
@@ -419,10 +438,12 @@
       <item itemvalue="Application.SearchEngine" />
       <item itemvalue="Application.JTreeExample" />
       <item itemvalue="JUnit.FileListGeneratorTest" />
+      <item itemvalue="Application.BM" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.SearchEngine" />
+        <item itemvalue="Application.BM" />
         <item itemvalue="JUnit.FileListGeneratorTest" />
         <item itemvalue="Application.JTreeExample" />
       </list>
@@ -446,7 +467,14 @@
       <option name="project" value="LOCAL" />
       <updated>1540886830265</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="view fix">
+      <created>1540910946146</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1540910946146</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TodoView">
@@ -462,7 +490,7 @@
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1844473" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1844473" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -471,12 +499,12 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info id="Learn" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49893504" weight="0.32869378" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4877892" weight="0.32839838" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.5861183" visible="true" weight="0.37012112" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49893504" weight="0.32839838" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4877892" visible="true" weight="0.32839838" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.5861183" weight="0.37012112" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49946752" weight="0.32976446" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49946752" weight="0.32974428" />
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49893504" weight="0.32976446" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.41388175" side_tool="true" weight="0.37012112" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
@@ -511,16 +539,28 @@
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/limblend/searchengine/FileSelectionComponent.java</url>
-          <line>21</line>
+          <url>file://$PROJECT_DIR$/src/com/limblend/searchengine/TextFileViewPanel.java</url>
+          <line>23</line>
           <properties />
-          <option name="timeStamp" value="32" />
+          <option name="timeStamp" value="71" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/limblend/searchengine/SearchComponent.java</url>
-          <line>53</line>
+          <line>23</line>
           <properties />
-          <option name="timeStamp" value="37" />
+          <option name="timeStamp" value="72" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/limblend/searchengine/SearchThread.java</url>
+          <line>52</line>
+          <properties />
+          <option name="timeStamp" value="74" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/limblend/searchengine/FileSelectionComponent.java</url>
+          <line>21</line>
+          <properties />
+          <option name="timeStamp" value="75" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -540,20 +580,6 @@
     <entry file="jar:///usr/lib/jvm/java-8-openjdk/jre/lib/rt.jar!/java/util/ArrayList.class" />
     <entry file="file://$PROJECT_DIR$/src/com/limblend/searchengine/BoyerMooreSearch.java" />
     <entry file="file://$PROJECT_DIR$/src/com/limblend/searchengine/BoyerMoorePatternFiniderSingleton.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/limblend/searchengine/FilePatternFinder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="27" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/limblend/searchengine/DirectoryListGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///usr/lib/jvm/java-8-openjdk/jre/lib/rt.jar!/javax/swing/tree/TreeModel.class" />
     <entry file="jar:///usr/lib/jvm/java-8-openjdk/jre/lib/rt.jar!/javax/swing/tree/TreeNode.class" />
     <entry file="jar:///usr/lib/jvm/java-8-openjdk/jre/lib/rt.jar!/javax/swing/tree/TreePath.class" />
@@ -600,46 +626,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/limblend/searchengine/SearchEngine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="43" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/limblend/searchengine/FileMatchesNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="32" column="25" lean-forward="true" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#323#324#0" expanded="true" />
-            <element signature="e#350#351#0" expanded="true" />
-            <element signature="e#397#398#0" expanded="true" />
-            <element signature="e#427#428#0" expanded="true" />
-            <element signature="e#2858#2859#0" expanded="true" />
-            <element signature="e#2895#2896#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/limblend/searchengine/FileSelectionComponent.java___jb_tmp___">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="14" column="9" selection-end-line="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/limblend/searchengine/ChooseRootDirComponent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="19" column="58" selection-start-line="19" selection-start-column="58" selection-end-line="19" selection-end-column="58" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -654,59 +644,137 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/limblend/searchengine/SearchEngineGUI.java">
+    <entry file="file://$PROJECT_DIR$/src/com/limblend/searchengine/BM.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
+        <state relative-caret-position="128">
+          <caret line="74" selection-start-line="74" selection-end-line="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/jre/lib/rt.jar!/java/lang/StringBuffer.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="64" selection-start-line="64" selection-end-line="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/limblend/searchengine/DirectoryListGeneratorInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="6" column="28" lean-forward="true" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/jre/lib/rt.jar!/javax/swing/tree/DefaultTreeModel.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1398">
+          <caret line="139" column="29" selection-start-line="139" selection-start-column="29" selection-end-line="139" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/jre/lib/rt.jar!/javax/swing/JTree.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="1196" selection-start-line="1196" selection-end-line="1196" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/limblend/searchengine/TextFileViewPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="49" column="22" selection-start-line="49" selection-start-column="22" selection-end-line="49" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/limblend/searchengine/SearchEngine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="5" lean-forward="true" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/limblend/searchengine/RecursiveDirectoryListGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-11">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#257#258#0" expanded="true" />
+            <element signature="e#302#303#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/limblend/searchengine/FoundFilesTreeModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="37" selection-start-line="37" selection-end-line="37" />
+        <state relative-caret-position="-79">
+          <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#426#427#0" expanded="true" />
-            <element signature="e#453#454#0" expanded="true" />
+            <element signature="e#392#393#0" expanded="true" />
+            <element signature="e#419#420#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/limblend/searchengine/FileExtensionFilter.java">
+    <entry file="file://$PROJECT_DIR$/src/com/limblend/searchengine/FilePatternFinder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
+        <state relative-caret-position="119">
+          <caret line="7" column="56" selection-start-line="7" selection-start-column="56" selection-end-line="7" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/limblend/searchengine/DirectoryListGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-28">
+          <caret line="10" column="40" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/limblend/searchengine/BoyerMoorePatternFinder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="18" column="57" lean-forward="true" selection-start-line="18" selection-start-column="57" selection-end-line="18" selection-end-column="57" />
+        <state relative-caret-position="867">
+          <caret line="51" column="28" lean-forward="true" selection-start-line="51" selection-start-column="28" selection-end-line="51" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/limblend/searchengine/TextFileViewPanel.java">
+    <entry file="file://$PROJECT_DIR$/src/com/limblend/searchengine/ChooseRootDirComponent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="8" column="24" lean-forward="true" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+        <state relative-caret-position="-79">
+          <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/limblend/searchengine/FileExtensionFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="27" column="9" lean-forward="true" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/limblend/searchengine/SearchEngineInputGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="34" column="121" selection-start-line="34" selection-start-column="121" selection-end-line="34" selection-end-column="121" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/limblend/searchengine/SearchComponent.java">
+    <entry file="file://$PROJECT_DIR$/src/com/limblend/searchengine/FileMatchesNode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="54" column="5" lean-forward="true" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
+        <state relative-caret-position="-28">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -715,8 +783,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/limblend/searchengine/FileSelectionComponent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="27" column="5" lean-forward="true" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+        <state relative-caret-position="244">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/limblend/searchengine/SearchEngineOutputGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="28" column="63" selection-start-line="28" selection-start-column="63" selection-end-line="28" selection-end-column="63" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/limblend/searchengine/SearchComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="29">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/limblend/searchengine/SearchThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="52" selection-start-line="52" selection-end-line="52" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
